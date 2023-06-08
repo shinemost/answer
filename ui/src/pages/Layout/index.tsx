@@ -5,6 +5,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import { SWRConfig } from 'swr';
 
 import { toastStore, loginToContinueStore, errorCodeStore } from '@/stores';
+import './index.scss';
+import head from '@/assets/images/head.png';
 import {
   Header,
   Footer,
@@ -43,6 +45,7 @@ const Layout: FC = () => {
         <div
           className="position-relative page-wrap"
           onClick={imgViewer.checkClickForImgView}>
+          <img src={head} alt="ask" className="img" />
           {httpStatusCode ? (
             <HttpErrorContent httpCode={httpStatusCode} />
           ) : (
